@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>$w</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tuitum.each do |tuitum| %>
+      <tr>
+        <td><%= tuitum.content %></td>
+        <td><%= link_to 'Show', tuitum %></td>
+        <td><%= link_to 'Edit', edit_tuitum_path(tuitum) %></td>
+        <td><%= link_to 'Destroy', tuitum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tuitum', new_tuitum_path %>

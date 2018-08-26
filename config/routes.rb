@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'tuita/top', to: 'tuita#top'
+  root 'tuita#top'
+ 
   resources :tuita do
     collection do
   post :confirm

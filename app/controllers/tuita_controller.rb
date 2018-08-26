@@ -1,6 +1,10 @@
 class TuitaController < ApplicationController
   before_action :set_tuitum, only: [:show, :edit, :update, :destroy]
 
+  def top
+    
+  end
+  
   def index
     @tuitum = Tuitum.all
   end
@@ -24,7 +28,7 @@ class TuitaController < ApplicationController
   
   def update
       if @tuitum.update(tuitum_params)
-        redirect_to tuitum_path, notice: "編集しました！"
+        redirect_to tuita_path, notice: "編集しました！"
       else
         render 'edit'
       end
@@ -33,7 +37,7 @@ class TuitaController < ApplicationController
  
   def destroy
     @tuitum.destroy
-      redirect_to tuitum_params, notice:"削除しました！"
+      redirect_to tuita_path, notice:"削除しました！"
   end
   
    def show

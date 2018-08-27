@@ -20,7 +20,7 @@ class TuitaController < ApplicationController
   def create
     @tuitum = Tuitum.new(tuitum_params)
       if @tuitum.save
-        redirect_to tuita_path, notice: "投稿されました"
+        redirect_to tuita_path, notice: "＄wされました"
       else
         render 'new'
       end
@@ -28,7 +28,7 @@ class TuitaController < ApplicationController
   
   def update
       if @tuitum.update(tuitum_params)
-        redirect_to tuita_path, notice: "編集しました！"
+        redirect_to tuita_path, notice: "＄w編集しました！"
       else
         render 'edit'
       end
@@ -37,7 +37,7 @@ class TuitaController < ApplicationController
  
   def destroy
     @tuitum.destroy
-      redirect_to tuita_path, notice:"削除しました！"
+      redirect_to tuita_path, notice:"＄w削除しました！"
   end
   
    def show

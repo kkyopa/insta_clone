@@ -16,12 +16,12 @@
  */
 
 .mokume {
-background-image: url('mokume.jpg')
+background-image: url('mo.jpg')
 
 }
 
 .background{
-    background-image: url("mokume.jpg");
+    background-image: url("mo.jpg");
     width:100%;
     color:white;
     background-size: cover;
@@ -31,7 +31,7 @@ background-image: url('mokume.jpg')
     background:white;
 }
 #top{
-     background-image: url("mokume.jpg");
+     background-image: url("mo.jpg");
     width:100%;
     color:white;
     background-size: cover;
@@ -96,6 +96,7 @@ footer#index_footer {
  font-size:400px;
  margin-left:50px;
  margin-bottom:60px;
+ color:#b8860b;
 }
 
 .w {
@@ -112,7 +113,7 @@ footer#index_footer {
     margin-bottom:70px
 }
 .description {
-    font-size:30px;
+    font-size:40px;
     margin-left:700px;
 }
 

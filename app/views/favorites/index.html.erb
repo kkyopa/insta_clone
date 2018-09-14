@@ -1,0 +1,23 @@
+<div class="toppage">
+      <ul = "nav">
+        <li class = "sin"><%= link_to '＄w',root_path %>sw</a></li>
+        <li class = "nav1"><%= link_to 'プロフィール',user_path(current_user.id) %></li>
+        <li class = "nav2"><%= link_to "お気に入り", favorites_path(current_user.id) %>
+        <li class = "nav3"><%= link_to "一覧画面", tuita_path(current_user.id) %></li>
+        <li class = "nav4"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+      </ul>
+</div>
+
+<tbody>
+<% @favorite.each do |favorite| %>
+  <div class="favorite">
+    <tr>
+      <h4 class="favorite_content">内容</h4><td><%= favorite.tuitum.content %></td>
+      <h4 class="favorite_image">画像</h4><td><%= image_tag favorite.tuitum.image %></td>
+  </div>
+<% end %>
+<footer id = "footer">
+        <center><p>運営会社川田株式会社</p><center>
+        <center><p>© 2018  かわだ </p><center>
+    </footer>
+</tbody>

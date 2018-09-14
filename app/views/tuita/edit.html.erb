@@ -1,14 +1,16 @@
 <div class="toppage">
       <ul = "nav">
         <li class = "sin"><%= link_to '＄w',root_path %>sw</a></li>
-        <li class = "toukou"><%= link_to '＄wする',new_tuitum_path %>投稿する</a></li>
-        <li class = "naiyou"><%= link_to '＄wをみる',tuita_path %>内容をみる</a></li>
+        <li class = "nav1"><%= link_to 'プロフィール',user_path(current_user.id) %></li>
+        <li class = "nav2"><%= link_to "お気に入り", favorites_path(current_user.id) %>
+        <li class = "nav3"><%= link_to "一覧画面", tuita_path(current_user.id) %></li>
+        <li class = "nav4"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
       </ul>
 </div>
 
 <body id = "top" >
 <h1>＄wを編集する</h1>
-<%= render 'form', tuitum: @tuitum %>
+<center><%= render 'form', tuitum: @tuitum %></center>
 <footer id = "footer">
         <center><p>運営会社ひろあきあべ社</p><center>
         <center><p>© 2018　ひろあきどんだけ </p><center>

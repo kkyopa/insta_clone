@@ -25,7 +25,10 @@ background-image: url('mo.jpg')
     width:100%;
     color:white;
     background-size: cover;
+    
 }
+
+
 
 .toppage {
     background:white;
@@ -38,7 +41,21 @@ background-image: url('mo.jpg')
      position: fixed;
 }
 
+.sign {
+    color:black;
+    text-align: center
+}
 
+
+.favorite {
+    font-size:30px;
+    text-align:center;
+}
+
+.favorite_content {
+    font-size:20px;
+    text-align:center;
+}
 
 
 .sin {
@@ -48,17 +65,31 @@ background-image: url('mo.jpg')
     
 }
 
-.toukou {
+.nav1 {
     font-size:30px;
     margin-left:200px;
     margin-top:-65px;
 }
 
-.naiyou {
-    font-size:30px;
-    margin-left:400px;
+.nav2 {
+     font-size:30px;
+    margin-left:450px;
     margin-top:-42px;
 }
+
+.nav3 {
+    font-size:30px;
+    margin-left:700px;
+    margin-top:-40px;
+}
+
+.nav4 {
+    font-size:30px;
+    margin-left:950px;
+    margin-top:-42px;
+}
+
+
 
 
 footer#footer {
@@ -123,15 +154,19 @@ footer#index_footer {
     text-align: center
 }
 
+.tuitum_image {
+   margin-left:670px;
+}
+
 .ren {
+    font-size:20px;
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:10px;
 }
 
 .rend {
-    font-size:70px;
+    font-size:20px;
     text-align:center;
-    margin-bottom:50px;
 }
 
 .botan {
@@ -150,4 +185,8 @@ footer#index_footer {
 
 .input {
     text-wrap:break-word;
+}
+
+label{
+    color:white;
 }

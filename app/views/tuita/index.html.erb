@@ -1,14 +1,16 @@
 <div class="toppage">
       <ul = "nav">
         <li class = "sin"><%= link_to '＄w',root_path %>sw</a></li>
-        <li class = "toukou"><%= link_to '＄wする',new_tuitum_path %>投稿する</a></li>
-        <li class = "naiyou"><%= link_to '＄wをみる',tuita_path %>内容をみる</a></li>
+        <li class = "nav1"><%= link_to 'プロフィール',user_path(current_user.id) %></li>
+        <li class = "nav2"><%= link_to "お気に入り", favorites_path(current_user.id) %>
+        <li class = "nav3"><%= link_to 'ブログ投稿',new_tuitum_path %></li>
+        <li class = "nav4"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
       </ul>
 </div>
 
-<p id="notice"><%= notice %></p>
 
-<h1 class ="rend">＄w一覧</h1>
+
+<h1 class ="rend">ブログ一覧</h1>
 
 
 
@@ -16,17 +18,20 @@
     <% @tuitum.each do |tuitum| %>
        <div class = "list">
         <h1 class ="content"><%= tuitum.content %></h1>
-  
         <div class="blog-links">
-          <%= link_to '＄w詳細', tuitum , class: 'btn btn-info' %>
-          <%= link_to '＄w編集', edit_tuitum_path(tuitum) , class: 'btn btn-default' %>
-          <%= link_to '＄wを消す', tuitum, method: :delete, data: { confirm: '＄wを削除しますか？' }, class: 'btn btn-danger' %><br>
+          <%= link_to '詳細画面😄', tuitum , class: 'btn btn-info' %>
+          <%= link_to '編集画面😏', edit_tuitum_path(tuitum) , class: 'btn btn-default' %>
+          <%= link_to '削除😫', tuitum, method: :delete, data: { confirm: '投稿を削除しますか？' }, class: 'btn btn-danger' %><br>
         </div>
       </div>
     <% end %>
     <footer id = "index_footer">
-        <center><p>運営会社川田株式会社</p><center>
-        <center><p>© 2018　かわだ </p><center>
+        <center><p>© 2018　＄w</p><center>
+        <center><p>© 2018  ＄w</p><center>
     </footer>
   </tbody>
-
+  
+  
+  
+  
+  

@@ -1,27 +1,39 @@
 <div class="toppage">
-      <ul = "nav">
-        <li class = "sin"><%= link_to '＄w',root_path %>sw</a></li>
-        <li class = "toukou"><%= link_to '＄wする',new_tuitum_path %>投稿する</a></li>
-        <li class = "naiyou"><%= link_to '＄wをみる',tuita_path %>内容をみる</a></li>
-      </ul>
+  <ul = "nav">
+    <li class = "sin"><%= link_to '＄w',root_path %>sw</a></li>
+    <li class = "nav1"><%= link_to 'プロフィール',user_path(current_user.id) %></li>
+        <li class = "nav2"><%= link_to "お気に入り", favorites_path(current_user.id) %>
+        <li class = "nav3"><%= link_to "一覧画面", tuita_path(current_user.id) %></li>
+        <li class = "nav4"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+  </ul>
 </div>
 
-<body id = "top" >
-<h3 class = "ren">以下の内容で、送信する。</h3>
-<div class = "botan">
-<%= form_with(model: @tuitum, url: tuita_path, local: true) do |form| %>
-  <%= form.hidden_field :content %>
-  <p class = "rend">＄w投稿:<%= @tuitum.content %></p>
-  <button type="submit" class="btn btn-warning btn-lg">＄wする</button><br><br><br><br>
-<% end %>
 
-<%= form_with(model: @tuitum, url: new_tuitum_path, local: true, method: 'get') do |form| %>
+
+<body id = "top" >
+  <h3 class = "ren">以下の内容で、送信する。</h3>
+  <div class = "botan">
+  <%= form_with(model: @tuitum, url: tuita_path, local: true) do |form| %>
+    <%= form.hidden_field :content %>
+    <%= form.hidden_field :image_cache %>
+    <p class = "rend">投稿内容:<%= @tuitum.content %></p>
+    <%= image_tag(@tuitum.image) %>
+    <button type="submit" class="btn btn-warning btn-lg">送信</button><br>
+  <% end %>
+
+
+
+
+  <%= form_with(model: @tuitum, url: new_tuitum_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
   <button type="submit" class="btn btn-warning">戻る</button>
   </div>
-<% end %>
-<footer id = "footer">
-        <center><p>運営会社＄w社</p><center>
-        <center><p>© 2018　＄w </p><center>
-    </footer>
+  <% end %>
+
+  <footer id = "footer">
+    <center><p>運営会社＄w社</p><center>
+    <center><p>© 2018　＄w </p><center>
+  </footer>
 </body>
+

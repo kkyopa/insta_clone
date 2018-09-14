@@ -1,0 +1,31 @@
+<div class="toppage">
+      <ul = "nav">
+        <li class = "sin"><%= link_to '＄w',root_path %></li>
+        <% if logged_in? %>
+        <li class = "nav1"><%= link_to "新規登録", new_user_path %>
+        <li class = "nav2"><%= link_to "ログイン", new_session_path %>
+        <% else %>
+        <li class = "nav1"><%= link_to "新規登録", new_user_path %>
+        <li class = "nav2"><%= link_to "ログイン", new_session_path %>
+        <% end %>
+      </ul>
+</div>
+<body id = "top" >
+  <div class="sign">
+    
+    <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+
+      <%= f.label :メールアドレス %>
+      <%= f.email_field :email %>
+
+      <%= f.label :パスワード %>
+      <%= f.password_field :password %><br><br>
+
+     <button type="submit" class="btn btn-success">ログイン</button>
+  </div>
+<footer id = "footer">
+    <center><p>運営会社ヘアサロン千葉栄輝社</p><center>
+    <center><p>© 2018  えいき </p><center>
+    </footer>
+<% end %>
+</body>

@@ -1,18 +1,29 @@
 <div class="toppage">
       <ul = "nav">
-        <li class = "sin"><%= link_to '＄w',root_path %>sw</a></li>
-        <li class = "toukou"><%= link_to '＄wする',new_tuitum_path %>投稿する</a></li>
-        <li class = "naiyou"><%= link_to '＄wをみる',tuita_path %>内容をみる</a></li>
+        <li class = "sin"><%= link_to '＄w',root_path %></li>
+        <% if logged_in? %>
+        <li class = "nav1"><%= link_to 'プロフィール',user_path(current_user.id) %></li>
+        <li class = "nav2"><%= link_to "お気に入り", favorites_path(current_user.id) %>
+        <li class = "nav3"><%= link_to "一覧画面", tuita_path(current_user.id) %></li>
+        <li class = "nav4"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+        <% else %>
+        <li class = "nav1"><%= link_to "新規登録", new_user_path %>
+        <li class = "nav2"><%= link_to "ログイン", new_session_path %>
+        <% end %>
       </ul>
 </div>
+
+
+
+
 
 <body id = "top" >
 
 <div class="background">
 <h1 class ="s">＄</h1>
-<h1 class = "w">w</h1>
-<h1 class = "sw">＄wとは</h1>
-  <p class = "description">140文字以内の短い投稿(＄w)<br>を入力して、<br>みんなで共有するサービス<br>$wの語源は<br>しんやわたなべ</p>
+<h1 class = "w">g</h1>
+<h1 class = "sw">＄gとは</h1>
+  <p class = "description">140文字以内の短い投稿と<br>画像を投稿して、<br>みんなで共有するサービス<br>
 </div>
  <footer id = "footer">
         <center><p>運営会社＄w社</p><center>

@@ -1,0 +1,42 @@
+<div class="toppage">
+      <ul = "nav">
+        <li class = "sin"><%= link_to '＄w',root_path %></li>
+        <% if logged_in? %>
+        <li class = "toukou"><%= link_to "新規登録", user_path(current_user.id) %></li>
+        <li class = "naiyou"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+        <% else %>
+        <li class = "nav1"><%= link_to "新規登録", new_user_path %>
+        <li class = "nav2"><%= link_to "ログイン", new_session_path %>
+        <% end %>
+      </ul>
+</div>
+ 
+<body id = "top" >
+  <div class="sign">
+    <%= form_with(model: @user, local: true) do |f| %>  
+    <%= f.label :お名前 %>
+    <%= f.text_field :name %>
+
+    <%= f.label :メールアドレス %>
+    <%= f.email_field :email %>
+
+    <%= f.label :パスワード %>
+    <%= f.password_field :password %>
+
+    <%= f.label :パスワード確認 %>
+    <%= f.password_field :password_confirmation %><br><br><br>
+    
+    <center><%= f.label :image %>
+    <%= f.file_field :image %></center><br><br><br>
+
+    <button type="submit" class="btn btn-success">送信</button>
+  </div>
+  </center>
+  <footer id = "footer">
+    <center><p>運営会社ヘアサロン千葉栄輝社</p><center>
+    <center><p>© 2018  えいき </p><center>
+    </footer>
+<% end %>
+</body>
+
+

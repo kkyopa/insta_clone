@@ -1,0 +1,24 @@
+<div class="toppage">
+      <ul = "nav">
+        <li class = "sin"><%= link_to '＄w',root_path %></li>
+        <% if logged_in? %>
+        <li class = "nav1"><%= link_to 'プロフィール',user_path(current_user.id) %></li>
+        <li class = "nav2"><%= link_to "お気に入り", favorites_path(current_user.id) %>
+        <li class = "nav3"><%= link_to "一覧画面", tuita_path(current_user.id) %></li>
+        <li class = "nav4"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+        
+        <% else %>
+        <li class = "toukou"><%= link_to "ログイン", new_session_path %>
+        <% end %>
+      </ul>
+</div>
+<body id = "top" >
+  <center>
+    <h1><%= @user.name %>のページ</h1>
+    <p>メールアドレス: <%= @user.email %></p>
+    <p>
+      <strong>Image:</strong>
+      <%= image_tag @user.image %>
+    </p>
+  </center>
+</body>

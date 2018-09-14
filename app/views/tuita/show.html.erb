@@ -1,27 +1,39 @@
 <div class="toppage">
       <ul = "nav">
         <li class = "sin"><%= link_to '＄w',root_path %>sw</a></li>
-        <li class = "toukou"><%= link_to '＄wする',new_tuitum_path %>投稿する</a></li>
-        <li class = "naiyou"><%= link_to '＄wをみる',tuita_path %>内容をみる</a></li>
+        <li class = "nav1"><%= link_to 'プロフィール',user_path(current_user.id) %></li>
+        <li class = "nav2"><%= link_to "お気に入り", favorites_path(current_user.id) %>
+        <li class = "nav3"><%= link_to "一覧画面", tuita_path(current_user.id) %></li>
+        <li class = "nav4"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
       </ul>
 </div>
-
-<body id = "top" >
+<center><body id = "top" >
 
 <p id="notice"><%= notice %></p>
-
-<h1 class = "ren">$w詳細画面</h1>
-
-<p class = "rend">＄w内容:<%= @tuitum.content %></p>
+<p class = "ren">詳細画面</p>
+<p class = "rend">内容:<%= @tuitum.content %></p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @tuitum.image %>
+</p>
+  <% unless @tuitum.user == current_user %>
+  <% if @favorite.present? %>
+    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %><br><br>
+  <% else %>
+    <%= link_to 'お気に入りする', favorites_path(tuitum_id: @tuitum.id), method: :post, class: 'btn btn-primary' %></center><br>
+  <% end %>
+<% end %>
 
 <div class = "botan">
 <%= form_with(model: @tuitum, url: tuita_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :content %>
-  <button type="submit" class="btn btn-warning">戻る</button>
+  
+  <button type="submit" class="btn btn-warning">戻る</button><br>
   </div>
 <% end %>
 <footer id = "footer">
-        <center><p>運営会社ヘアサロン千葉栄輝社</p><center>
-        <center><p>© 2018　えいき </p><center>
+        <center><p>運営会社＄w社</p><center>
+        <center><p>© 2018  ＄w</p><center>
     </footer>
 </body>
+

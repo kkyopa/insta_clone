@@ -17,6 +17,7 @@
   <tbody>
     <% @tuitum.each do |tuitum| %>
        <div class = "list">
+        <h1 class="content">投稿者：<%= tuitum.user.name %></h1>
         <h1 class ="content"><%= tuitum.content %></h1>
         <div class="blog-links">
           <%= link_to '詳細画面😄', tuitum , class: 'btn btn-info' %>

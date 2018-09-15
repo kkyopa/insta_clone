@@ -8,7 +8,8 @@
         <li class = "nav4"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
         
         <% else %>
-        <li class = "toukou"><%= link_to "ログイン", new_session_path %>
+        <li class = "nav1"><%= link_to "新規登録", new_user_path %>
+        <li class = "nav2"><%= link_to "ログイン", new_session_path %>
         <% end %>
       </ul>
 </div>

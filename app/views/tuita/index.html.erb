@@ -19,9 +19,9 @@
         <h1 class="content">投稿者：<%= tuitum.user.name %></h1>
         <h1 class ="content"><%= tuitum.content %></h1>
         <div class="blog-links">
-          <%= link_to '詳細画面😄', tuitum , class: 'btn btn-info' %>
+          <%= link_to '詳細画面😄', tuitum_path , class: 'btn btn-info' %>
           <%= link_to '編集画面😏', edit_tuitum_path(tuitum) , class: 'btn btn-default' %>
-          <%= link_to '削除😫', tuitum, method: :delete, data: { confirm: '投稿を削除しますか？' }, class: 'btn btn-danger' %><br>
+          <%= link_to '削除😫', tuitum_path, method: :delete, data: { confirm: '投稿を削除しますか？' }, class: 'btn btn-danger' %><br>
         </div>
       </div>
     <% end %>

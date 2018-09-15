@@ -19,7 +19,7 @@
     <p>メールアドレス: <%= @user.email %></p>
     <p>
       <strong>Image:</strong>
-      <%= image_tag @user.image %>
+      <%= image_tag (@user.image.url) %>
     </p>
   </center>
 </body>

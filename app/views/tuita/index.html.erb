@@ -20,8 +20,10 @@
         <h1 class ="content"><%= tuitum.content %></h1>
         <div class="blog-links">
           <%= link_to '詳細画面😄', tuitum_path(tuitum), class: 'btn btn-info' %>
-          <%= link_to '編集画面😏', edit_tuitum_path(tuitum), class: 'btn btn-default' %>
-          <%= link_to '削除😫', tuita_path, method: :delete, data: { confirm: '投稿を削除しますか？' }, class: 'btn btn-danger' %><br>
+          <% if tuitum.user_id == current_user.id %>
+            <%= link_to '編集画面😏', edit_tuitum_path(tuitum), class: 'btn btn-default' %>
+            <%= link_to '削除😫', tuita_path, method: :delete, data: { confirm: '投稿を削除しますか？' }, class: 'btn btn-danger' %><br>
+          <% end %>
         </div>
       </div>
     <% end %>
@@ -30,7 +32,6 @@
         <center><p>© 2018  ＄w</p><center>
     </footer>
   </tbody>
-  
   
   
   

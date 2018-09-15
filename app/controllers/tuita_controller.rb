@@ -69,7 +69,7 @@ class TuitaController < ApplicationController
     end
     
     def edit_destroy_postonly
-    unless @tuitum.user_id.to_i == current_user.id
+    unless @tuitum.user_id == current_user.id
       redirect_to tuita_path, notice:"投稿者以外の編集、削除はできません。"
     end
     end

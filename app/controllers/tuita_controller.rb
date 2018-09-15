@@ -22,7 +22,7 @@ class TuitaController < ApplicationController
     @tuitum = Tuitum.new(tuitum_params)
     @tuitum.user_id = current_user.id
       if @tuitum.save
-        ContactMailer.contact_mail(@tuitum).deliver
+        # ContactMailer.contact_mail(@tuitum).deliver
         redirect_to tuita_path, notice: "＄wされました"
       else
         render 'new'

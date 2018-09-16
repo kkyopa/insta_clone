@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  mount LetterOpenerWeb::Engine, at: "/letter_opener"
   root 'tuita#top'
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
     resources :contacts
     resources :tuita do
     collection do

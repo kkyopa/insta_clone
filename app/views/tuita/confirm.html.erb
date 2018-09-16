@@ -17,7 +17,7 @@
     <%= form.hidden_field :content %>
     <%= form.hidden_field :image_cache %>
     <p class = "rend">投稿内容:<%= @tuitum.content %></p>
-    <%= image_tag(@tuitum.image) %>
+    <%= image_tag(@tuitum.image, :size => "500x330") %>
     <button type="submit" class="btn btn-warning btn-lg">送信</button><br>
   <% end %>
 

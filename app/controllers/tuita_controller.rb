@@ -54,6 +54,7 @@ class TuitaController < ApplicationController
    end
 
   private
+  
     def set_tuitum
       @tuitum = Tuitum.find(params[:id])
     end

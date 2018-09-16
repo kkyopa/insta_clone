@@ -15,12 +15,12 @@
     <tr>
       <h4 class="favorite_name">名前</h4><td><%= favorite.tuitum.user.name %></td>
       <h4 class="favorite_content">内容</h4><td><%= favorite.tuitum.content %></td>
-      <h4 class="favorite_image">画像</h4><td><%= image_tag favorite.tuitum.image %></td>
+      <h4 class="favorite_image">画像</h4><td><%= image_tag favorite.tuitum.image, :size => "600x500" %></td>
       <% end %>
   </div>
 <% end %>
 <footer id = "footer">
-        <center><p>運営会社川田株式会社</p><center>
+        <center><p>運営会社川田</p><center>
         <center><p>© 2018  かわだ </p><center>
     </footer>
 </tbody>

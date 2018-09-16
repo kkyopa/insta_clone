@@ -16,7 +16,7 @@
   
   <center><%= form.label :画像 %></center>
   <div class="tuitum_image">
-  <%= image_tag(@tuitum.image.url) if @tuitum.image.url %>
+  <%= image_tag(@tuitum.image.url, :size => "500x330") if @tuitum.image.url %>
     <%= form.file_field :image %><br>
 </div>
   <button type="submit" class="btn btn-info">＄wする</button>

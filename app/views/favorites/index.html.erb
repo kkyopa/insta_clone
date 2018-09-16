@@ -11,9 +11,12 @@
 <tbody>
 <% @favorite.each do |favorite| %>
   <div class="favorite">
+    <% if favorite.user_id == current_user.id %>
     <tr>
+      <h4 class="favorite_name">名前</h4><td><%= favorite.tuitum.user.name %></td>
       <h4 class="favorite_content">内容</h4><td><%= favorite.tuitum.content %></td>
       <h4 class="favorite_image">画像</h4><td><%= image_tag favorite.tuitum.image %></td>
+      <% end %>
   </div>
 <% end %>
 <footer id = "footer">
@@ -21,3 +24,5 @@
         <center><p>© 2018  かわだ </p><center>
     </footer>
 </tbody>
+
+

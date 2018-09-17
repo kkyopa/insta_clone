@@ -1,7 +1,7 @@
 <%= form_with(model: @tuitum, local: true ,url: choose_new_or_edit) do |form| %>
 <% if @tuitum.errors.any? %>
     <div id="error_explanation">
-      <h2><%= @tuitum.errors.count %>件のエラーがあります。<br>1文字以上１４０文字以内でお願い❤️</h2>
+      <h2><%= @tuitum.errors.count %>件のエラーがあります。<br>1文字以上１４０文字以内でお願い</h2>
       <ul>
         <% @tuitum.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>

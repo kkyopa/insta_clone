@@ -13,18 +13,17 @@
 <div class="tuitum_title">
   <%= form.label :投稿内容 %><br>
   <%= form.text_field :content,:size=>"50" %><br>
+  <%= form.label :画像 %>
   
-  <center><%= form.label :画像 %></center>
   <div class="tuitum_image">
   <%= image_tag(@tuitum.image.url, :size => "500x330") if @tuitum.image.url %>
+  <div class="image_new">
     <%= form.file_field :image %><br>
-</div>
-  <button type="submit" class="btn btn-info">＄wする</button>
+  </div>
+  </div>
+  <button type="submit" class="btn btn-info">投稿する</button>
 </div>
 <% end %>
-
-
-
 
 
 

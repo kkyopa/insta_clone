@@ -150,7 +150,7 @@ footer#index_footer {
 
 .tuitum_title {
     color:black;
-    font-size: 30px;
+    font-size: 18px;
     text-align: center
 }
 
@@ -158,6 +158,9 @@ footer#index_footer {
    margin-left:670px;
 }
 
+.image_new{
+    margin-top:50px
+}
 .ren {
     font-size:20px;
     text-align:center;

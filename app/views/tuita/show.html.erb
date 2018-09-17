@@ -14,7 +14,7 @@
 <p class = "rend">内容:<%= @tuitum.content %></p>
 <p>
   <strong>Image:</strong>
-  <%= image_tag @tuitum.image %>
+  <%= image_tag @tuitum.image, :size => "500x330" %>
 </p>
   <% unless @tuitum.user == current_user %>
   <% if @favorite.present? %>
